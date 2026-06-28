@@ -1,0 +1,83 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Local configuration files that may contain private paths
+local_config.yaml
+local_config.yml
+.env
+
+# Raw/private participant data
+data/
+raw_data/
+Phase 1 Data/
+Phase 2 Data/
+Phase 2 Data_F/
+Phase 2 Data_Edited/
+Generated_ADL_Data/
+
+# Outputs and generated artefacts
+outputs/
+results/
+figures/
+tables/
+arrays/
+diagnostics/
+metadata/
+generation_manifest.json
+
+# Trained models and large model artefacts
+models/
+*.keras
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.mlmodel
+*.mlpackage/
+*.mlpackage
+
+# CSV/Excel files are ignored by default to reduce the risk of uploading data
+*.csv
+*.xlsx
+*.xls
+
+# But allow synthetic/example data and documentation CSVs if intentionally included
+!example_data/
+!example_data/**
+!docs/**/*.csv
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Keep these root files trackable
+!README.md
+!requirements.txt
+!.gitignore

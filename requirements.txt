@@ -1,0 +1,18 @@
+# Core scientific Python stack
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+
+# Deep learning
+tensorflow
+
+# Core ML export for Apple/watchOS deployment
+coremltools
+
+# Configuration files
+PyYAML
+
+# Optional, useful for notebooks and development
+jupyter

@@ -1,0 +1,81 @@
+# Example configuration for SmartADAPT-Net
+# Replace the placeholder paths with local paths on your machine.
+# Do not commit private participant data or personal file paths to GitHub.
+
+project:
+  name: SmartADAPT-Net
+  description: >
+    Adaptive smartwatch-based ADL recognition using a frozen population model,
+    complexity-aware modulation, confirmation-driven prototype personalisation,
+    and evidence-adaptive fusion.
+
+paths:
+  phase1_data_root: "/path/to/Phase 1 Data"
+  phase2_data_root: "/path/to/Phase 2 Data_F"
+  output_root: "/path/to/SmartADAPT_outputs"
+
+code01:
+  script: "scripts/code01_phase1_train_export_coreml.py"
+  outdir: "/path/to/SmartADAPT_outputs/code01_phase1"
+  strict_columns: true
+  export_coreml: true
+  minimum_coreml_target: "watchOS9"
+
+code02:
+  script: "scripts/code02_phase2_chronological_replay.py"
+  code1_outdir: "/path/to/SmartADAPT_outputs/code01_phase1"
+  outdir: "/path/to/SmartADAPT_outputs/code02_replay"
+  analysis_mode: "after_pre"
+  pre_stabilisation_seconds: 3
+  analysis_seconds: 24
+  window_seconds: 8
+
+code03:
+  script: "scripts/code03_generate_phase2_manuscript_outputs.py"
+  input_csv: "/path/to/SmartADAPT_outputs/code02_replay/canonical_code1_outputs/phase2_replay_window_level_CODE1_canonical_compatible.csv"
+  outdir: "/path/to/SmartADAPT_outputs/code03_manuscript_outputs"
+  strict: true
+  dpi: 600
+  n_boot: 2000
+
+data:
+  sampling_hz: 50
+  window_size: 400
+  n_windows_per_session: 3
+  session_layout:
+    pre_stabilisation_seconds: 3
+    analysis_seconds: 24
+    post_stabilisation_seconds: 3
+
+classes:
+  - Brushing Teeth
+  - Mopping_Hoovering
+  - Shelving Items
+  - Walking
+  - Washing Dishes
+  - Washing Face
+
+model_input_channels:
+  - motionUserAccelerationX(G)
+  - motionUserAccelerationY(G)
+  - motionUserAccelerationZ(G)
+  - motionRotationRateX(rad/s)
+  - motionRotationRateY(rad/s)
+  - motionRotationRateZ(rad/s)
+
+adaptive_parameters:
+  w_acc: 0.4
+  tau: 0.5
+  gate_k: 10.0
+  prototype_n_min: 3
+  prototype_lambda: 10.0
+  alpha_min: 0.05
+  alpha_max: 0.30
+  n_ref: 5
+  gamma: 0.5
+
+privacy:
+  raw_participant_data_included: false
+  notes: >
+    This repository does not include raw participant data. Users should provide
+    their own local data folders following the documented structure.

@@ -1,0 +1,13 @@
+participant,day,session,UserConfirmation_true,PredictedClass,n_rows,file,improving,inconsistent
+P202,1,1,Brushing Teeth,Brushing Teeth,1500,P202_D01_S001.csv,TRUE,FALSE
+P202,1,2,Walking,Walking,1500,P202_D01_S002.csv,TRUE,FALSE
+P202,1,3,Shelving Items,Walking,1500,P202_D01_S003.csv,TRUE,FALSE
+P202,1,4,Washing Dishes,Washing Dishes,1500,P202_D01_S004.csv,TRUE,FALSE
+P202,1,5,Mopping_Hoovering,Mopping_Hoovering,1500,P202_D01_S005.csv,TRUE,FALSE
+P202,1,6,Washing Face,Walking,1500,P202_D01_S006.csv,TRUE,FALSE
+P202,2,1,Brushing Teeth,Brushing Teeth,1500,P202_D02_S001.csv,TRUE,FALSE
+P202,2,2,Walking,Walking,1500,P202_D02_S002.csv,TRUE,FALSE
+P202,2,3,Shelving Items,Walking,1500,P202_D02_S003.csv,TRUE,FALSE
+P202,2,4,Washing Dishes,Shelving Items,1500,P202_D02_S004.csv,TRUE,FALSE
+P202,2,5,Mopping_Hoovering,Mopping_Hoovering,1500,P202_D02_S005.csv,TRUE,FALSE
+P202,2,6,Washing Face,Walking,1500,P202_D02_S006.csv,TRUE,FALSE
